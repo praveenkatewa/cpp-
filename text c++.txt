@@ -1,0 +1,167 @@
+1. C++ Program to Swap two numbers
+ #include <iostream>
+using namespace std;
+int main(){
+    int a;
+    cout<<"enter number a: ";
+    cin >>a;
+    int b;
+    cout<<"enter number b: ";
+    cin>>b;
+    
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    cout<<a;
+    cout<<b;
+    return 0;
+}
+
+2. C++ Program to Check Even or Odd Integers
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num1 ;
+    cout<<"Enter the number: ";
+    cin >> num1;
+   if(num1%2 == 0) cout<<"number is even";
+   else cout<<"number is odd";
+    return 0;
+}
+3.C++ Program to Check Whether a Character is a Vowel or Consonant
+#include <iostream>
+using namespace std;
+int main(){
+    char alpha;
+    cout<<"enter the character: ";
+    cin>>alpha;
+    if(alpha=='a'||alpha=='e'||alpha=='o'||alpha=='u'||alpha=='i')
+    cout<<"vowel";
+    else
+    cout<<"consoant";
+    return 0;
+}
+4. C++ Program to Calculate Sum of First n Natural Numbers
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int sum;
+    cout<<"Enter the n value: ";
+    cin>>n;
+    
+    for(int i = 1 ; i<= n ; i++ )
+    {
+        sum = sum + i;
+    }
+    
+    cout<< sum ;
+    return 0;
+}
+5. C++ Program to Reverse a Number
+#include <iostream>
+using namespace std;
+int main(){
+    int num=453;
+    int sum=0;
+    int rem;
+    
+    
+    while(num>0)
+    {
+        rem=num%10;
+        sum=sum*10+rem;
+        num=num/10;
+    }
+    cout<<sum;
+    return 0;
+}
+6. Write a C++ program to get nth bit of a number.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    if(n&(1<<(k-1)))
+    cout  << k << " is set.";
+    else
+  cout  << k<< " is unset." ;
+    return 0;
+}
+7. Write a C++ program to set nth bit of a number.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    int x=1;
+    x=x<<k-1;
+    n=n|x;
+    cout<<n;
+    return 0;
+}
+
+8. Write a C++ program to clear nth bit of a number.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    int x=1;
+    x= ~(1<<(k-1));
+    n=n&x;
+    cout<<n;
+    return 0;
+}
+9. Write a C++ program to toggle nth bit of a number.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    int x=1;
+    x= 1<<(k-1);
+    n=n^x;
+    cout<<n;
+    return 0;
+}
+10.Write a C++ program to get highest set bit of a number.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int x ;
+    cin >> x ;
+    
+    int k;
+    for(int i = 1 ; i <= sizeof(x)*8 ; i++)
+    {
+        if(x&(1<<(i-1)))
+        {
+            k= i;
+        }
+    } 
+
+    cout<<k;
+    return 0;
+}
+
+
+
+
+
