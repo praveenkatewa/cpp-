@@ -1,0 +1,195 @@
+1)	Write a C++ program to check Least Significant Bit (LSB) of a number is set or not
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    if(n&1){
+    cout << " LSB of " << n << " is set.";
+    }
+    else
+    {
+  cout << "LSB of " << n<< " is notset." ;
+    }
+    return 0;
+}
+10
+LSB of 10 is notset.
+Ex: 12   1100
+0000  1100
+0000  0001
+
+
+
+
+
+2)	Write a C++ program to check Most Significant Bit (MSB) of a number is set or not
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    cout<<"enter the number: ";
+    cin>>num;
+    
+    int numbits =sizeof(int)*8;
+    
+    int msb=1<<(numbits-1);
+    
+    if(num&msb){
+    cout << " msb of " << num << " is set.";
+    }
+    else
+    {
+  cout << "msb of " << num<< " is notset." ;
+    }
+    return 0;
+}
+
+3)	Write a C++ program to get nth bit of a number.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    if(n&(1<<(k-1)))
+    cout  << k << " is set.";
+    else
+  cout  << k<< " is unset." ;
+    return 0;
+}
+
+
+
+
+4)	Write a C++ program to set nth bit of a number.
+A=26
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    int x=1;
+    x=x<<k-1;
+    n=n|x;
+    cout<<n;
+    return 0;
+}
+5)	Write a C++ program to clear nth bit of a number.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    int x=1;
+    x= ~(1<<(k-1));
+    n=n&x;
+    cout<<n;
+    return 0;
+}
+
+10
+4
+2
+
+
+6)	Write a C++ program to toggle nth bit of a number.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int k;
+    cin>>n;
+    cin>>k;
+    int x=1;
+    x= 1<<(k-1);
+    n=n^x;
+    cout<<n;
+    return 0;
+}
+
+10
+3
+14
+
+7) Write a C++ program to count total zeros and ones in a binary number.
+Ones:
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    int count=0;
+    cin>>num;
+    
+    while(num)
+    {
+        count=count +(num&1);
+        num>>=1;
+    }
+    cout<<count<<endl;
+    
+    return 0;
+}
+
+Zero:
+#include <iostream>
+using namespace std;
+int countUnsetBits(int num) {
+    int count = 0;
+    while (num) {
+        
+        if ((num & 1) == 0) {
+            count++;
+        }
+        num >>= 1;
+    }
+
+    return count;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    int unsetBitsCount = countUnsetBits(num);
+cout << "Number of unset bits: " << unsetBitsCount <<endl;
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
+int countTrailingZeros(int num) {
+    int count = 0;
+    while ((num & 1) == 0) {
+        count++;
+        num >>= 1; 
+    }
+
+    return count;
+}
+
+int main() {
+    int binaryNumber;
+
+   
+    cout << "Enter a binary number: ";
+    cin >> binaryNumber;
+    int trailingZeros = countTrailingZeros(binaryNumber);
+    cout << "Number of trailing zeros: " << trailingZeros << endl;
+
+    return 0;
+}
