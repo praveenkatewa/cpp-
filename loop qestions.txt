@@ -1,0 +1,159 @@
+Sum of two number:
+ #include <iostream>
+using namespace std;
+int main(){
+    int a;
+    cout<<"enter the number 1: ";
+    cin>>a;
+    int b;
+    cout<<"enter the number 2 :";
+    cin>>b;
+    int c;
+    c=a+b;
+    cout<<"sum of a and b: "<<c;
+    return 0;
+}
+2)swap number 
+ #include <iostream>
+using namespace std;
+int main(){
+    int a=10;
+    int b=5;
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    cout<<a;
+    cout<<b;
+    return 0;
+}
+3) #include <iostream>
+using namespace std;
+int main(){
+    int a=10;
+    int b=5;
+    int c;
+    c=a;
+    a=b;
+    b=c;
+    
+    cout<<a;
+    cout<<b;
+    
+    return 0;
+}
+4) 
+#include<iostream>
+using namespace std;
+int main(){
+    
+    char alpha;
+    cout<<"enter the character:";
+    cin>>alpha;
+    if(alpha=='a')
+    {
+        int a;
+        cout<<"enter the number: ";
+        cin>>a;
+        int b;
+        cout<<"enter the number : ";
+        cin>>b;
+        int c;
+        c=a+b;
+        cout<<c;
+    }
+    else
+    {
+        cout<< "notmatch";
+    }
+    return 0;
+}
+5) even and odd
+#include <iostream>
+using namespace std;
+int main(){
+    int num;
+    cout<<"enter the number: ";
+    cin>>num;
+    if(num%2==0)
+        cout<<"number is even";
+    else
+    cout<<"number is odd";
+    return 0;
+}
+6) voter id
+#include <iostream>
+using namespace std;
+int main(){
+    int age;
+    cout<<"enter the age: ";
+    cin>>age;
+    if(age>=18)
+        cout<<"valid for voter id";
+    else
+    cout<<"not valid for voter id";
+    return 0;
+}
+7)vowel
+#include <iostream>
+using namespace std;
+int main(){
+    char alpha;
+    cout<<"enter the character: ";
+    cin>>alpha;
+    if(alpha=='a'||alpha=='e'||alpha=='o'||alpha=='u'||alpha=='i')
+    cout<<"vowel";
+    else
+    cout<<"consoant";
+    return 0;
+}
+8)marksheet
+#include <iostream>
+using namespace std;
+int main(){
+  int per;
+  cout<<"enter the per: ";
+  cin>>per;
+  if(per>90)
+  cout<<"A";
+  else if(per>60 &&per<=90)
+  cout<<"B";
+  else if(per>50 && per<=60)
+  cout<<"C";
+  else
+  cout<<"fail";
+    return 0;
+}
+9)sum of 1 to 10
+ #include <iostream>
+using namespace std;
+int main(){
+    int a;
+    int sum=0;
+    while(a<=10)
+    {
+        sum=sum+a;
+        cout<<sum<<endl;
+        a++;
+    }
+    cout<<sum;
+  
+    return 0;
+}
+10)number reverse
+#include <iostream>
+using namespace std;
+int main(){
+    int num=453;
+    int sum=0;
+    int rem;
+    
+    
+    while(num>0)
+    {
+        rem=num%10;
+        sum=sum*10+rem;
+        num=num/10;
+    }
+    cout<<sum;
+    return 0;
+}
