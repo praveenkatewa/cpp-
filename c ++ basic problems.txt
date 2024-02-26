@@ -1,0 +1,212 @@
+Sum of two number:
+ #include <iostream>
+using namespace std;
+int main(){
+    int a;
+    cout<<"enter the number 1: ";
+    cin>>a;
+    int b;
+    cout<<"enter the number 2 :";
+    cin>>b;
+    int c;
+    c=a+b;
+    cout<<"sum of a and b: "<<c;
+    return 0;
+}
+2) find circumference of a circle
+#include <iostream>
+using namespace std;
+int main()
+{
+ int radius;
+ cout<<"enter the radius: ";
+ cin>>radius;
+ int circumference;
+ circumference=2*3.14*radius;
+ cout<<circumference;
+    return 0;
+}
+3) average of 3 number
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int a,b,c;
+cout<<"enter the value of a: ";
+cin>>a;
+cout<<"enter the value of b: ";
+cin>>b;
+
+cout<<"enter the value of c: ";
+cin>>c;
+int avg;
+avg=(a+b+c)/3;
+cout<<avg;
+    return 0;
+}
+4) odd even
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int num;
+cout<<"enter the number: ";
+cin>>num;
+if(num%2==0)
+cout<<num <<" is even";
+else
+cout<<num<< " is odd";
+    return 0;
+}
+5) student grade 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int marks;
+cout<<"enter the marks:";
+cin>>marks;
+if(marks>=90)
+cout<<"A";
+else if(marks>=80)
+cout<<"B";
+else if(marks>=60)
+cout<<"C";
+else if(marks>=40)
+cout<<"D";
+else
+cout<<"fail";
+    return 0;
+}
+6) check number is +ve,-ve,0
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int number;
+cout<<"enter the number: ";
+cin>>number;
+if(number>0)
+cout<<"+ve";
+else if(number<0)
+cout<<"-ve";
+else if(number==0)
+cout<<"zero";
+else
+cout<<"not match";
+    return 0;
+}
+7)print counting from 1 to n
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int n;
+cout<<"enter the number: ";
+cin>>n;
+for(int i=1;i<=n;i++)
+cout<<i;
+    return 0;
+}
+8) Add N numbers from user
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    int num;
+    int sum=0;
+    cout<<"how many number you want to enter ? ";
+    cin>>n;
+    cout<<"enter "<<n<<" numbers: ";
+    for(int i=0;i<n;i++)
+    {
+        cin>>num;
+        sum=sum+num;
+    }
+    cout<<"sum of all "<<n<<" numbers is "<<sum;
+    cout<<endl;
+
+    return 0;
+}
+By while loop
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n, i=0, num, sum=0;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+    cout<<"Enter "<<n<<" numbers: ";
+    while(i<n)
+    {
+        cin>>num;
+        sum = sum+num;
+        i++;
+    }
+    cout<<"\nSum = "<<sum;
+    cout<<endl;
+    return 0;
+}
+By array
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n, i, arr[50], sum=0;
+    cout<<"Enter the value of n (max. 50): ";
+    cin>>n;
+    cout<<"Enter "<<n<<" numbers: ";
+    for(i=0; i<n; i++)
+    {
+        cin>>arr[i];
+        sum = sum+arr[i];
+    }
+    cout<<"\nSum = "<<sum;
+    cout<<endl;
+    return 0;
+}
+By function
+#include<iostream>
+using namespace std;
+int findSum(int [], int);
+int main()
+{
+    int n, i, arr[50], sum;
+    cout<<"Enter the value of n (max. 50): ";
+    cin>>n;
+    cout<<"Enter "<<n<<" numbers: ";
+    for(i=0; i<n; i++)
+        cin>>arr[i];
+    sum = findSum(arr, n);
+    cout<<"\nSum = "<<sum;
+    cout<<endl;
+    return 0;
+}
+int findSum(int arr[], int n)
+{
+    int i, sum=0;
+    for(i=0; i<n; i++)
+        sum = sum+arr[i];
+    return sum;
+}
+9) printing 1 to N but only odd numbers
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout <<"enter the number: ";
+    cin>>n;
+    for(int i=0;i<=n;i++)
+    {
+        if(i%2!=0){
+            cout<< i;
+        }
+        
+    }
+    return 0;
+}
