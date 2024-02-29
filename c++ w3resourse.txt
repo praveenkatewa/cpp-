@@ -1,0 +1,116 @@
+1. Write a program in C++ to print the sum of two numbers.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a;
+    cout<<"enter the number1: ";
+    cin>>a;
+    int b;
+    cout<<"enter the number2: ";
+    cin>>b;
+    int c;
+    c=a+b;
+    cout<<c;
+
+    return 0;
+}
+==================================================================
+2.Write a in C++ program to find the size of fundamental data types.
+#include <iostream>
+using namespace std;
+int main()
+{
+   cout<<sizeof(char)<<endl;
+cout<<sizeof(short)<<endl;
+cout<< sizeof(int)<<endl;
+cout<< sizeof(long)<<endl ;
+ cout<<sizeof(long long)<<endl; 
+cout<< sizeof(float)<<endl;
+cout<<sizeof(double)<<endl ;
+cout<<sizeof(long double)<<endl ;
+cout<<sizeof(bool)<<endl;
+    return 0;
+}
+==================================================================
+#include <iostream>
+using namespace std;
+int main()
+{
+  int n1=5 , n2=10;
+  double d1=3.7 , d2=8.0;
+  cout<< " "<<n1<<"+"<<n2<<"="<<n1+n2<<endl;
+  cout<<" "<<d1<<"+"<<d2<<"="<<d1+d2;
+ 
+
+    return 0;
+}
+==========================================================
+Write a C++ program to display the operation of pre and post increment and decrement.
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num=57;
+  cout<<"after post increment by 1:"<<endl;
+  num++;
+  cout<<num<<endl;
+  cout<<"after pre increment by1: "<<endl;
+  ++num;
+  cout<<num;
+
+    return 0;
+}
+==================================================================================
+Write a C++ program that swaps two numbers.
+#include <iostream>
+using namespace std;
+int main()
+{
+int num1;
+cout<<"enter the number1: ";
+cin>>num1;
+int num2;
+cout<<"enter the number2: ";
+cin>>num2;
+int num;
+num=num2;
+num2=num1;
+num1=num;
+cout<<num1<<endl;
+cout<<num2<<endl;
+
+    return 0;
+}
+=====================================================================
+Write a C++ program that calculates the volume of a sphere.
+#include <iostream>
+using namespace std;
+int main()
+{
+int rad;
+cout<<"enter the rad: ";
+cin>>rad;
+float volsp;
+volsp=(4*3.14*rad*rad*rad)/3;
+cout<<"the volume of sphere is"<<volsp;
+    return 0;
+}
+=====================================================================
+Write a C++ program that calculates the volume of a cylinder.
+#include <iostream>
+using namespace std;
+int main()
+{
+int rad,hgt;
+cout<<"enter the rad: ";
+cin>>rad;
+cout<<"enter the hgt: ";
+cin>>hgt;
+float volcy;
+volcy=(3.14*rad*rad*hgt);
+cout<<"the volume of cylinder is"<<volcy;
+    return 0;
+}
+============================================================================
+
