@@ -1,0 +1,244 @@
+Write a C++ program to check if two or more integers that are not negative
+have the same rightmost digit.
+#include <iostream>
+using namespace std;
+int main()
+{
+   int x;
+   cout<<"enter the value for x: ";
+   cin>>x;
+   int y;
+   cout<<"enter the value for y: ";
+   cin>>y;
+   int z;
+   cout<<"enter the value for z : ";
+   cin>>z;
+   if( x % 10 == y % 10 || x % 10 == z % 10 || y % 10 == z % 10)
+   {
+       cout<<"right most digit is same";
+       
+   }
+   else
+   {
+       cout<<"not same";
+   }
+
+    return 0;
+}
+==============================================================================
+Write a C++ program to check three given integers and return true if one of
+them is 20 lower than one of the others.
+#include <iostream>
+using namespace std;
+int main()
+{
+   int x;
+   cout<<"enter the value for x: ";
+   cin>>x;
+   int y;
+   cout<<"enter the value for y: ";
+   cin>>y;
+   int z;
+   cout<<"enter the value for z : ";
+   cin>>z;
+   if( (x - y) >= 20 || (x - z) >= 20 || (y - z) >= 20)
+   {
+       cout<<"true";
+       
+   }
+   else
+   {
+       cout<<"not true";
+   }
+
+    return 0;
+}
+=================================================================================
+3. Write a C++ program to find the larger of two given integers. However if the
+two integers have the same remainder when divided by 7, then return the
+smaller integer. If the two integers are the same, return 0.
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int x;
+    cout <<"enter the value for x: ";
+    cin>>x;
+    int y;
+    cout<<"enter the value for y: ";
+    cin>>y;
+  if (x == y)
+    {
+        cout<<"0"; 
+    }
+
+    else if ((x % 7 == y % 7 && x < y) || x > y)
+    {
+       cout<< x; 
+    }
+    else
+    {
+        cout <<y; 
+    }
+    return 0;    
+}
+===================================================================================
+Write a C++ program to check two given integers. Each integer is in the
+range 10..99. Return true if a digit appears in both numbers, such as the 3
+in 13 and 33.
+#include <iostream>
+using namespace std;
+int main()
+{
+   int x;
+   cout<<"enter the value for x: ";
+   cin>>x;
+   int y;
+  cout<<"enter the value for y: ";
+  cin>>y;
+   
+  if(x >=10 && x<=99 && y>=10 && y<=99 )
+   {
+       if( x / 10 == y / 10 || x / 10 == y % 10 || x % 10 == y / 10 || x % 10 == y % 10)
+       {
+           cout<<"true";
+           
+       }
+        else
+       {
+      cout<<"not true"; 
+         }
+   }
+    return 0;
+}
+========================================================================================
+Write a C++ program to check a positive integer and return true if it
+contains the number 3. Otherwise return false.
+#include <iostream>
+using namespace std;
+int main()
+{
+   int x;
+   bool check = false;
+   cout<<"enter the value for x: ";
+   cin>>x;
+ 
+    while (x > 0) {
+        if (x % 10 == 3) 
+        {
+           check = true;
+           break;
+        }
+          x /= 10;
+    }
+       
+       (check)?cout<<"true":cout<<"false";
+    return 0;
+}
+=================================================================================
+6. Write a C++ program that displays the sum of the N terms of even natural
+numbers.
+#include <iostream>
+using namespace std;
+int main()
+{
+   int num;
+   cout<<"enter the numer: ";
+   cin>>num;
+   int sum;
+   for(int i=0;i<=num;i++)
+ {
+     if(i%2==0)
+     {
+         sum=sum+i;
+     }
+     
+ }
+ cout<<sum;
+ 
+   
+    return 0;
+}
+======================================================================================
+Write a program in C++ to check whether a number is prime or not.
+using namespace std;
+
+int main() {
+    int number;
+
+    cout << "Enter number: ";
+    cin >> number;
+    
+    bool isPrime = true;
+    for (int i = 2; i <= number / 2; ++i) {
+        if (number % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+  
+    if (isPrime)
+        cout <<  " prime number." << endl;
+    else
+        cout <<  " is not a prime number." << endl;
+
+    return 0;
+}
+================================================================================
+Write a program in C++ to find the perfect numbers between 1 and 500.
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int num;
+    cin >> num;
+    
+    for(int i = 1 ; i <= num ; i++)
+    {
+        int sum = 0;
+        
+        for(int j = 1 ; j < i ; j++)
+        {
+          if(i%j == 0)
+          {
+             sum = sum + j;
+          }
+        }
+        
+        if(sum == i)
+        {
+            cout<<i<<",";
+        }
+        
+    }
+    
+    return 0;
+}
+==================================================================================
+10.Write a program in C++ to find the number and sum of all integers between
+100 and 200 which are divisible by 9.
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    
+     int sum=0;
+    for(int i =  100; i <= 200; i++)
+    {
+        if(i%9==0){
+            
+            sum=sum+i;
+            cout<<i<<endl;
+        }
+  
+    }
+    cout<<endl<<sum;
+    
+    return 0;
+}
