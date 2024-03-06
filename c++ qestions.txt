@@ -1,0 +1,88 @@
+1)create a program that takes user input for their name and prints a greeting using cout.
+#include <iostream>
+using namespace std;
+int main()
+{
+    string name;
+    cin>>name;
+    cout<<"hello "<<name<< " welcome to the program";
+    return 0;
+}
+===============================================================================
+2)write a program that take two numbers as input and print their sum.
+#include <iostream>
+using namespace std;
+int main()
+{
+   int a,b,sum;
+   cout<<"enter the value of a and b\n";
+   cin>>a>>b;
+   sum=a+b;
+   cout<<"the addition of a and b is "<<sum;
+    return 0;
+}
+=======================================================================================
+3)write a program that takes the user birth year asa input and calculate their age,then print a message like"you are [age] year old".
+#include <iostream>
+using namespace std;
+int main()
+{
+  int birth_year,present_year,age;
+  cout<<"enter the value of birth year and present year\n";
+  cin>>birth_year>>present_year;
+  age=present_year-birth_year;
+  cout<<"you are "<<age<<" year old";
+    return 0;
+}
+========================================================================================
+4) ask the user for principle amount ,interst rate,and time(in year).calculate and print the simple interst.
+#include <iostream>
+using namespace std;
+int main()
+{
+  float principle_amount,interst_rate,year,simple_interst;
+  cout<<"enter the principle_amount and interst_rate and year \n";
+  cin>>principle_amount>>interst_rate>>year;
+  simple_interst=principle_amount*interst_rate*year/100;
+  cout<<"simple_interst is "<<simple_interst;
+    return 0;
+}
+========================================================================================
+#include <iostream>
+using namespace std;
+int main()
+{
+ int num=10;
+ if(num>0)
+ {
+     cout<<"positive number "<<endl;
+ }
+ else
+ {
+     cout<<"negative number "<<endl;
+ }
+    return 0;
+}
+========================================================================================
+#include <iostream>
+using namespace std;
+int main()
+{
+ int a=10,b=5;
+ if(a==b)
+ {
+     cout<<"a is equal to b "<<endl;
+ }
+ if(a!=b){
+     cout<<"a is not equal to b "<<endl;
+ }
+ if(a>b){
+     cout<<"a is greater then b"<<endl;
+ }
+ if(a<b){
+     cout<<" a is less then b"<<endl;
+ }
+    return 0;
+}
+========================================================================================
+
