@@ -1,0 +1,583 @@
+1)Write a C++ program that takes an integer as input and uses an `if-else` statement to determine whether the number is even or odd.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    cout<<"enter the number: ";
+    cin>>num;
+    if(num%2==0){
+        cout<<num<<" number is even ";
+    }else
+    {
+        cout<<num<<" number is odd";
+    }
+    return 0;
+}
+===========================================================================================
+2)Create a program that takes a student's percentage as input and outputs their corresponding grade(A, B, C, etc.) using `if-else` statements.
+#include <iostream>
+using namespace std;
+int main()
+{
+    double percentage;
+    cout<<"enter the number: ";
+    cin>>percentage;
+    if(percentage>=90){
+        cout<<"the GRADE IS A";
+    }else if(percentage>=80)
+    {
+        cout<<"THE GRADE IS B";
+    }
+    else if(percentage>=70)
+    {
+        cout<<"THE GRADE IS C";
+    }
+    else if(percentage>=60){
+        cout<<"THE GRADE IS D";
+    }
+    else{
+        cout<<"THE STUDENT IS FAIL";
+    }
+    return 0;
+}
+===========================================================================================
+3)Write a program that checks if a given year is a leap year or not. Use an `if-else` statement and logical operators to make the determination.
+#include <iostream>
+using namespace std;
+int main()
+{
+      int year;
+    cout << "Enter a year: ";
+    cin >> year;
+    
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        cout << year << " is a leap year." <<endl;
+    } else {
+        cout << year << " is not a leap year." << endl;
+    }
+    return 0;
+}
+===========================================================================================
+4)Develop a program that takes three angles as input and determines whether the triangle is acute, obtuse, or right-angled using `if-else` statements.
+#include <iostream>
+using namespace std;
+int main()
+{
+     double angle1, angle2, angle3;
+    cout<<"enter the value of angle1\n";
+    cin>>angle1;
+    cout<<"enter the value of angle2\n";
+    cin>>angle2;
+    cout<<"enter the value of angle3\n";
+    cin>>angle3;
+    if (angle1 + angle2 + angle3 == 180) {
+       
+        if (angle1 == 90 || angle2 == 90 || angle3 == 90) 
+        {
+           cout << "The triangle is a right-angled triangle.";
+        } 
+        else if (angle1 < 90 && angle2 < 90 && angle3 < 90)
+        {
+            cout << "The triangle is an acute-angled triangle." ;
+        } 
+        else
+        {
+            cout << "The triangle is an obtuse-angled triangle.";
+        }
+        }else {
+        cout << "Invalid input! The angles do not form a valid triangle.";
+        } 
+    return 0;
+}
+==========================================================================================
+5)Create a C++ program that takes an integer as input and prints whether it is positive, negative, or zero using `if-else` statements.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    cout<<"enter the number: ";
+    cin>>num;
+    if(num>0){
+        cout<<"number is positive";
+    }
+    else if(num<0){
+        cout<<"number is negative";
+    }
+    else {
+        cout<<"number is zero";
+    }
+   
+    return 0;
+}
+==========================================================================================
+6)Implement a basic login system where the user enters a username and password. Use `if-else` statements to validate the login credentials.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string valid_username="praveen", valid_password="praveen12";
+    string username,password;
+    cout<<"enter your username\n";
+    cin>>username;
+    cout<<"enter your password\n";
+    cin>>password;
+    if (username==valid_username && password==valid_password)
+    {
+        cout<<"login successfull";
+    }
+    else{
+        cout<<"inocorrect the login credentials please try again";
+    }
+    return 0;
+}
+===========================================================================================
+7) Write a program that simulates a traffic light. The program should take user input for the current signal and output the next signal using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string currentSignal;
+    cout<<"enter currentsignal:";
+    cin>>currentSignal;
+    string nextsignal;
+    if(currentSignal=="red"){
+        nextsignal="green";
+    }
+    else if(currentSignal=="green"){
+        nextsignal="yellow";
+    }
+    else if(currentSignal=="yellow"){
+        nextsignal="red";
+    }
+    else{
+        cout<<"invalid input";
+    }
+    
+    cout<<nextsignal;
+    
+    return 0;
+}
+===========================================================================================
+8)Create a program that checks if a given number is divisible by both 5 and 7. Use logical operators within an `if` statement for the check.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int num;
+    cout<<"enter the number: ";
+    cin>>num;
+    if(num%5==0 && num%7==0){
+        cout<<num<<" is divisible by 5 and 7 ";
+    }
+    else
+    {
+        cout<<num<<" is not divisible by 5  and 7 ";
+    }
+    
+    return 0;
+}
+==========================================================================================
+9)Develop a program that converts temperatures between Celsius and Fahrenheit. Use `if-else`statements to handle the conversion based on user input.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  char choice;
+  float temp;
+  cout<<"type c and f for temp conversion: ";
+  cin>>choice;
+  cout<<"enter the temperature: ";
+  cin>>temp;
+  
+  if(choice=='c'){
+      float fahrenheit = (temp * 9 / 5) + 32;
+      cout<<fahrenheit;
+  }
+  else if(choice=='f'){
+      float celsius= (temp - 32) * 5 / 9;
+      cout<<celsius;
+  }
+  else
+  {
+      cout<<"invalid";
+  }
+    
+    return 0;
+}
+===========================================================================================
+10)Write a C++ program that takes three numbers as input and outputs the largest one using `if-else` statements and relational operators.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int num1, num2, num3;
+    cout<<"enter the value of number 1 ";
+    cin>>num1;
+    cout<<"enter the value of number2 ";
+    cin>>num2;
+    cout<<"enter the value of number3 ";
+    cin>>num3;
+    if(num1>=num2 && num1>=num3)
+    {
+        cout<<"the largest number is "<<num1;
+        
+    }
+    else if(num2>=num1 && num2>=num3)
+    {
+        cout<<"the largest number is " <<num2;
+    }
+    else{
+        cout<<"the largest number is " <<num3;
+    }
+    
+    return 0;
+}
+===========================================================================================
+11)Create a program that takes a character as input and determines whether it is a vowel or
+consonant using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  char ch;
+    cout<<"enter a character ";
+    cin>>ch;
+     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' )
+       {    cout<< "this character is a vowel."; 
+     }
+     else{
+         cout<<"this character is consonant";
+     }
+    
+    return 0;
+}
+==========================================================================================
+12)Write a program that classifies a person into different age groups (child, teenager, adult, senior) based on their age using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int age;
+   cout<<"enter the age ";
+   cin>>age;
+   if(age>=0 && age<=12)
+   {
+       cout<<" childern";
+   }
+   else if(age>=13 && age<=19)
+   {
+      cout<<"teenager";
+   }
+   else if (age>=20 && age<=64)
+   {
+       cout<<"adult";
+   }
+   else if (age>=65)
+   {
+       cout<<" senior";
+       
+   }
+   else{
+       cout<<" invalid age.";
+   }
+    
+    return 0;
+}
+===========================================================================================
+13)Write a program that takes coefficients of a quadratic equation as input and outputs the roots (realor imaginary) using `if-else` statements and the quadratic formula.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    double a, b, c;
+    double discriminant, root1, root2;
+    cout << "Enter the coefficients of the quadratic equation (ax^2 + bx + c):";
+    cout << "a: ";
+    cin >> a;
+    cout << "b: ";
+    cin >> b;
+    cout << "c: ";
+    cin >> c;
+    discriminant = b * b - 4 * a * c;
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        cout << "Root 1: " << root1 << endl;
+        cout << "Root 2: " << root2 << endl;
+    } else if (discriminant == 0)
+    {
+        root1 = root2 = -b / (2 * a);
+        cout << "Root 1 = Root 2: " << root1;
+    } else {
+       
+        double realPart = -b / (2 * a);
+        double imaginaryPart = sqrt(-discriminant) / (2 * a);
+        cout << "Root 1: " << realPart << " + " << imaginaryPart << "i";
+        cout << "Root 2: " << realPart << " - " << imaginaryPart << "i";
+    }
+
+    return 0;
+}
+==========================================================================================
+14)Create a program that calculates the Body Mass Index (BMI) based on user input for height and weight. Classify the BMI into different categories (underweight, normal, overweight) using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+        float height, weight,bmi;
+    cout<<"enter your height in cm \n";
+    cin>>height;
+    cout<<"enter your weight in kg \n";
+    cin>>weight;
+    bmi=weight / (height * height);
+    cout<<"bmi is "<< bmi ;
+    if(bmi<18.5)
+    {
+            cout<<"you are in underweight";
+    }
+    else if(bmi<24.9)
+    {
+        cout<<"your are in normalweigth";
+    }
+    else if(bmi<29.9)
+    {
+        cout<<"you are in overweight";
+    }
+    else{
+        cout<<"you are a obese";
+    }
+    
+    return 0;
+}
+===========================================================================================
+15)Write a program that converts currency from one unit to another. Use `if-else` statements to determine the conversion based on the selected currency pair.
+#include <iostream>
+using namespace std;
+int main()
+{
+    const double usdToEurRate = 0.85;
+    const double usdToGbpRate = 0.73;
+    const double usdToJpyRate = 109.51;
+
+   
+    double amount;
+    char fromCurrency, toCurrency;
+
+    
+    cout << "Enter the amount: ";
+    cin >> amount;
+
+    cout << "Enter the currency to convert from (USD, E, G, J, u): ";
+    cin >> fromCurrency;
+
+    cout << "Enter the currency to convert to (USD, E, G, J, u): ";
+    cin >> toCurrency;
+
+    
+    double result;
+    if (fromCurrency == 'U' && toCurrency == 'E') {
+        result =amount * usdToEurRate;
+    } else if (fromCurrency == 'U' && toCurrency == 'G') {
+        result = amount * usdToGbpRate;
+    } else if (fromCurrency == 'U' && toCurrency == 'J') {
+        result = amount * usdToJpyRate;
+    } else if (fromCurrency == 'E' && toCurrency == 'U') {
+        result = amount / usdToEurRate;
+    } else if (fromCurrency == 'G' && toCurrency == 'U') {
+        result = amount / usdToGbpRate;
+    } else if (fromCurrency == 'J' && toCurrency == 'U') {
+        result = amount / usdToJpyRate;
+    } else {
+        cout << "Invalid currency pair. Please enter valid currencies (USD, E, G, J)." ;
+       
+    }
+     cout << "Converted amount: " << result << " " << toCurrency;
+
+    return 0;
+}
+==========================================================================================
+16)Implement a program that evaluates the strength of a password based on certain criteria (length,presence of uppercase letters, numbers, etc.) using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+   string password;
+    bool hasUppercase = false;
+    bool hasNumber = false;
+    bool hasSpecialChar = false;
+    int minLength = 8;  
+  
+    cout << "Enter your password: ";
+    cin >> password;
+
+    if (password.length() < minLength) {
+        cout << "Weak password. Password should be at least " << minLength << " characters long." ;
+    } else {
+        for (char ch : password) 
+        {
+            if (isupper(ch)) {
+                hasUppercase = true;
+            } else if (isdigit(ch))
+            {
+                hasNumber = true;
+            } else if (!isalnum(ch)) 
+            {
+                hasSpecialChar = true;
+            }
+        }
+
+        if (hasUppercase && hasNumber && hasSpecialChar) {
+            cout << "Strong password. Good job!";
+        } else {
+            cout << "Moderate password. Consider adding uppercase letters, numbers, and special characters.";
+        }
+    }
+
+    return 0;
+}
+===========================================================================================
+Q.17 Create a program that takes a number representing a day of the week (1 for Sunday, 2 for Monday,etc.) and prints the corresponding day using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int daynumber;
+   cout<<"enter the number of day of the week(1 for Sunday, 2 for Monday, etc.):";
+   cin>>daynumber;
+   if(daynumber==1)
+   {
+       cout<<"sunday";
+   }
+   
+   else if(daynumber==2)
+   {
+       cout<<"monday";
+   }
+   else if(daynumber==3)
+   {
+       cout<<"tuesday";
+   }
+   else if(daynumber==4)
+   {
+       cout<<"wednesday";
+   }
+   else if(daynumber==5)
+   {
+       cout<<"thursday";
+   }
+   else if(daynumber==6)
+   {
+       cout<<"friday";
+   }
+   else if(daynumber==7)
+   {
+       cout<<"saturday";
+   }
+   else{
+       cout<<"Invalid day number. Please enter a number between 1 and 7.";
+   }
+    return 0;
+}
+================================================================================================================
+Q.18 Write a program that calculates the ticket price for a movie based on age and time of day. Apply discounts for children and seniors using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    const double BASE_PRICE = 10.0;
+    const double CHILD_DISCOUNT = 0.5; 
+    const double SENIOR_DISCOUNT = 0.8; 
+    
+    int age;
+    char timeOfDay;
+    cout << "Enter your age: ";
+    cin >> age;
+    cout << "Enter the time of day (M for morning, A for afternoon, E for evening): ";
+    cin >> timeOfDay;
+    double ticketPrice = BASE_PRICE; 
+
+    if (age < 5) { 
+        ticketPrice = 0.0;
+    } else if (age <= 12) {
+        
+        ticketPrice *= (1 - CHILD_DISCOUNT);
+    } else if (age >= 65) {
+        
+        ticketPrice *= (1 - SENIOR_DISCOUNT);
+    }
+
+    if (timeOfDay == 'E' || timeOfDay == 'e') {
+       
+        ticketPrice *= 0.9;
+    }
+
+    
+    cout << "Your ticket price is:" << ticketPrice;
+
+    return 0;
+}
+===============================================================================================================================================
+Q.19 Develop a program that classifies a given character into categories such as uppercase letter, lowercase letter, digit, or special character using `if-else` statements.
+#include <bits/stdc++.h>
+using namespace std;
+
+  int main() {
+    
+    char inputChar;
+    cout << "Enter a character: ";
+    cin >> inputChar;
+    if (isalpha(inputChar))
+    {
+        if (isupper(inputChar)) 
+        {
+            cout<< "Uppercase letter.";
+        } else 
+        {
+            cout << "Lowercase letter.";
+        }
+    } else if (isdigit(inputChar)) {
+        cout << "Digit.";
+    } else 
+    {
+        cout << "Special character.";
+    }
+
+    
+    return 0;
+}
+................................................................................................................................................
+Q.20 Create a program that calculates the electricity bill based on the units consumed. Apply different rates for different consumption ranges using `if-else` statements.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    const double RATE_SLAB_1 = 1.5; 
+    const double RATE_SLAB_2 = 2.0; 
+    const double RATE_SLAB_3 = 2.5;
+    double unitsConsumed, totalBill = 0;
+    cout << "Enter the units consumed: ";
+    cin >> unitsConsumed;
+    if (unitsConsumed <= 100) {
+        totalBill = unitsConsumed * RATE_SLAB_1;
+    } else if (unitsConsumed <= 300) {
+        totalBill = 100 * RATE_SLAB_1 + (unitsConsumed - 100) * RATE_SLAB_2;
+    } else {
+        totalBill = 100 * RATE_SLAB_1 + 200 * RATE_SLAB_2 + (unitsConsumed - 300) * RATE_SLAB_3;
+    }
+
+    cout << "Electricity Bill:" << totalBill;
+
+    return 0;
+}
