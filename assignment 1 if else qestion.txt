@@ -14,7 +14,7 @@ int main()
     }
     return 0;
 }
-===========================================================================================
+========================================================================================
 2)Create a program that takes a student's percentage as input and outputs their corresponding grade(A, B, C, etc.) using `if-else` statements.
 #include <iostream>
 using namespace std;
@@ -527,7 +527,7 @@ int main() {
 
     return 0;
 }
-===============================================================================================================================================
+===========================================================================================
 Q.19 Develop a program that classifies a given character into categories such as uppercase letter, lowercase letter, digit, or special character using `if-else` statements.
 #include <bits/stdc++.h>
 using namespace std;
@@ -556,28 +556,663 @@ using namespace std;
     
     return 0;
 }
-................................................................................................................................................
+..........................................................................................
 Q.20 Create a program that calculates the electricity bill based on the units consumed. Apply different rates for different consumption ranges using `if-else` statements.
 
 #include <bits/stdc++.h>
 using namespace std;
-int main()
+int main() 
 {
-    const double RATE_SLAB_1 = 1.5; 
-    const double RATE_SLAB_2 = 2.0; 
-    const double RATE_SLAB_3 = 2.5;
-    double unitsConsumed, totalBill = 0;
+    int units;
+    float bill;
     cout << "Enter the units consumed: ";
-    cin >> unitsConsumed;
-    if (unitsConsumed <= 100) {
-        totalBill = unitsConsumed * RATE_SLAB_1;
-    } else if (unitsConsumed <= 300) {
-        totalBill = 100 * RATE_SLAB_1 + (unitsConsumed - 100) * RATE_SLAB_2;
-    } else {
-        totalBill = 100 * RATE_SLAB_1 + 200 * RATE_SLAB_2 + (unitsConsumed - 300) * RATE_SLAB_3;
+    cin >> units;
+   if(units <= 50)
+    {
+        bill = units * 9.5;
     }
+    else if(units <= 150) 
+    {
+        bill = 50 * 9.5 + (units - 50) * 9.5;
+    }
+    else if(units <= 250) 
+    {
+        bill = 50 * 9.5 + 100 * 9.5 + (units - 150) * 9.5;
+    } 
+    else 
+    {
+        bill = 50 * 9.5 + 100 * 9.5 + 100 * 9.5 + (units - 250) * 9.5;
+    }
+    cout << "Electricity Bill: Rs. " << bill << endl;
+    
+    return 0;
+}
+===========================================================================================
+ 21 Bookstore Discount Calculator
+Implement a program that calculates the total cost of books after applying discounts based on the
+quantity purchased. Use `if-else` statements to determine the discount rate.
+Purchased above Rs 10000 then discount 5%
+Purchased above Rs 20000 then discount 10%
+Purchased above Rs 30000 then discount 15% .....
 
-    cout << "Electricity Bill:" << totalBill;
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    const int DISCOUNT_RATE_1 = 5;
+    const int DISCOUNT_RATE_2 = 10;
+    const int DISCOUNT_RATE_3 = 15;
+    const double THRESHOLD_1 = 10000.0;
+    const double THRESHOLD_2 = 20000.0;
+    const double THRESHOLD_3 = 30000.0;
+    
+    double totalCost = 0.0;
+    double bookPrice, quantity;
+
+    cout << "Enter the price of one book: ";
+    cin >> bookPrice;
+    cout << "Enter the quantity of books purchased: ";
+    cin >> quantity;
+
+    totalCost = bookPrice * quantity;
+
+    if (totalCost > THRESHOLD_3) 
+    {
+        totalCost -= totalCost * DISCOUNT_RATE_3 / 100.0;
+    }
+    else if (totalCost > THRESHOLD_2) 
+    {
+        totalCost -= totalCost * DISCOUNT_RATE_2 / 100.0;
+    } else if (totalCost > THRESHOLD_1) 
+    {
+        totalCost -= totalCost * DISCOUNT_RATE_1 / 100.0;
+    }
+    cout << "Total cost after applying discount: Rs " << totalCost << endl;
 
     return 0;
+}
+==========================================================================================
+24. **Sorting Three Numbers:**
+
+Write a program that takes three numbers as input and prints them in ascending order using `if-else` statements and relational operators.
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    int num1, num2, num3;
+
+    
+    cout << "Enter three numbers: ";
+    cin >> num1 >> num2 >> num3;
+
+   
+    if (num1 <= num2 && num1 <= num3) {
+        cout << num1 << ", ";
+        if (num2 <= num3) {
+            cout << num2 << ", " << num3;
+        } else {
+            cout << num3 << ", " << num2;
+        }
+    } else if (num2 <= num1 && num2 <= num3) {
+        cout << num2 << ", ";
+        if (num1 <= num3) {
+            cout << num1 << ", " << num3;
+        } else {
+            cout << num3 << ", " << num1;
+        }
+    } else {
+        cout << num3 << ", ";
+        if (num1 <= num2) {
+            cout << num1 << ", " << num2;
+        } else {
+            cout << num2 << ", " << num1;
+        }
+    }
+
+    cout << endl;
+
+    return 0;
+}
+===========================================================================================
+25. **Income Tax:**
+Implement a program that calculates the total tax after applying discounts based on the income. Use `if-else` statements to determine the discount rate.
+Salary below Rs 100000 then discount 15%
+Salary below Rs 200000 then discount 10%
+Salary below Rs 30000 then discount 25%
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int pay;
+    int sum;
+
+    cout << "Please enter your income: ";
+    cin >> pay;
+    
+ if(pay<=0)
+    {
+        cout<<"please enter positive number\n";
+    }
+    else if (pay <= 30000)
+    {
+        sum = pay * 0.25;
+    }
+    else if (pay > 30000 && pay <= 100000) 
+    {
+        sum = pay * 0.15;
+    } 
+    else if (pay > 100000 && pay <= 200000)
+    {
+        sum = pay * 0.10;
+    }
+    else 
+    {
+        sum = pay * 0.05;
+    }
+
+    cout << "Your income tax is " << sum << " INR";
+
+    return 0;
+}
+===========================================================================================
+26. Simple Alarm Clock:
+Write a program that takes the current time as input and prints a message based on whether it'smorning, afternoon, evening, or night.
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int hour;
+
+    
+    cout << "Enter the current hour (0-23): ";
+    cin >> hour;
+
+    if (hour >= 0 && hour < 6) {
+        cout << "It's night.\n";
+    } else if (hour >= 6 && hour < 12) {
+        cout << "Good morning!\n";
+    } else if (hour >= 12 && hour < 18) {
+        cout << "Good afternoon!\n";
+    } else {
+        cout << "Good evening!\n";
+    }
+
+    return 0;
+}
+==========================================================================================
+27. Positive or Negative:
+Write a program that takes an integer as input and prints whether it is a positive or negative number.
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int number;
+
+  
+    cout << "Enter an integer: ";
+    cin >> number;
+
+    if (number > 0) {
+        cout << "The number is positive.\n";
+    } else if (number < 0) {
+        cout << "The number is negative.\n";
+    } else {
+        cout << "The number is zero.\n";
+    }
+
+    return 0;
+}
+===========================================================================================
+28. Power of Two Checker:
+Write a program that checks if a given number is a power of two. Use if-else statements and bitwise operators for the check.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int num;
+
+   cout << "Enter the number you want to test: ";
+   cin >> num;
+
+   if((num != 0) && ((num &(num - 1)) == 0))
+      cout << num << " is a power of 2.\n";
+
+   else
+      cout << num << " is not a power of 2.\n";
+
+   return 0;
+}
+===========================================================================================
+29.Age Group Identifier:
+Write a program that takes the age of a person as input. Use logical operators to categorize them into"Child" (0-12), "Teenager" (13-19), "Adult" (20-59), and "Senior" (60 and above).
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int age;
+
+    cout << "Enter your age: ";
+    cin >> age;
+
+    if (age >= 0 && age <= 12) 
+    {
+        cout << "You are a Child.\n";
+    }
+    else if (age >= 13 && age <= 19)
+    {
+        cout << "You are a Teenager.\n";
+    }
+    else if (age >= 20 && age <= 59) 
+    {
+        cout << "You are an Adult.\n";
+    }
+    else
+    {
+        cout << "You are a Senior.\n";
+    }
+   return 0;
+}
+===========================================================================================
+30.Grade Validator:
+Create a program that takes a student's score as input. Use logical operators to check if the score is valid (between 0 and 100) and output whether the student passed (score >= 50) or failed.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int score;
+
+    cout << "Enter the student's score: ";
+    cin >> score;
+
+    if (score >= 0 && score <= 100) 
+    {
+        if (score >= 50) 
+        {
+            cout << "Congratulations! The student passed.\n";
+        }
+        else 
+        {
+            cout << "Sorry, the student failed.\n";
+        }
+    }
+    else 
+    {
+        cout << "Invalid score! Score must be between 0 and 100.\n";
+    }
+
+   return 0;
+}
+===========================================================================================
+31.Triangle Validator:
+Write a program that takes three integer inputs representing the sides of a triangle. Use logical operators to determine if the triangle is valid (the sum of any two sides is greater than the third).
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int side1, side2, side3;
+
+    cout << "Enter the length of side 1: ";
+    cin >> side1;
+
+    cout << "Enter the length of side 2: ";
+    cin >> side2;
+
+    cout << "Enter the length of side 3: ";
+    cin >> side3;
+
+    // Check if the triangle is valid
+    if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1)
+    {
+        cout << "The triangle is valid.\n";
+    } 
+    else 
+    {
+        cout << "The triangle is not valid.\n";
+    }
+
+   return 0;
+}
+===========================================================================================
+32. Divisibility Tester:
+Develop a program that takes an integer as input and checks if it is divisible by both 3 and 5 using logical operators.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int number;
+
+    cout << "Enter an integer: ";
+    cin >> number;
+    
+    if ((number % 3 == 0) && (number % 5 == 0)) 
+    {
+        cout << number << " yes: " << number << " is divisible by both 3 and 5.\n";
+    }
+    else 
+    {
+        cout << number << " No: " << number << " is not divisible by both 3 and 5.\n";
+    }
+
+   return 0;
+}
+===========================================================================================
+33.Login System with Multiple Conditions:
+Implement a basic login system. Ask the user to enter both a username and a password. Use logical operators to check if the username is "admin" and the password is "admin@123".
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string username, password;
+    
+    string correctUsername = "admin";
+    string correctPassword = "admin@123";
+
+    int maxAttempts = 3;
+    int attempts = 0;
+
+    while (attempts < maxAttempts) 
+    {
+        cout << "Enter username: ";
+        cin >> username;
+
+        cout << "Enter password: ";
+        cin >> password;
+
+        if (username == correctUsername && password == correctPassword) 
+        {
+            cout << "Login successful. Welcome, " << username << "!" <<"\n";
+            break;
+        }
+        else
+        {
+            cout << "Invalid username or password. Please try again.\n";
+            attempts++;
+        }
+    }
+    if (attempts == maxAttempts) 
+    {
+        cout << "Maximum login attempts reached. Access denied.\n";
+    }
+    return 0;
+}
+===========================================================================================
+34. Book Discount Calculator:
+Develop a program that calculates the total cost of books based on the quantity. Apply a discount of 10% if the quantity is between 5 and 10, and 20% if the quantity is more than 10.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    const double bookPriceINR = 600.51;
+    int quantity;
+    double totalCost;
+
+    cout << "Enter the quantity of books: ";
+    cin >> quantity;
+
+    if (quantity <= 0) 
+    {
+        cout << "Invalid quantity entered. Please enter number started from 1.\n";
+        return 1;
+    }
+
+    totalCost = quantity * bookPriceINR;
+
+    if (quantity >= 5 && quantity <= 10) 
+    {
+        totalCost *= 0.9; 
+    }
+    else if (quantity > 10)
+    {
+        totalCost *= 0.8; 
+    }
+
+    cout << "Total cost of books: Rs " << totalCost << "\n";
+
+    return 0;
+}
+===========================================================================================
+35. Ticket Price Determiner:
+Write a program that determines the price of a movie ticket based on the age of the person. Apply different rules for children(0-5), adults(5-12), and seniors(18-above).
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int age;
+    cout << "Enter age: ";
+    cin >> age;
+
+    if (age >= 0 && age <= 5) 
+    {
+        cout << "Ticket price: Free \n";
+    }
+    else if (age > 5 && age <= 12) 
+    {
+        cout << "Ticket price: 280 INR \n";
+    }
+    else if (age >= 18)
+    {
+        cout << "Ticket price: 380 INR \n";
+    }
+    else
+    {
+        cout << "Invalid age" << endl;
+    }
+
+    return 0;
+}
+===========================================================================================
+36. Product Availability Checker:
+Develop a program that checks the availability of a product in a store. If the product is in stock(greater than 1) and the user has a valid membership, they can purchase it; otherwise, display an "Out of stock" message.
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    try 
+    {
+        int stocks = 100, stck;
+        int membership_code = 1000, mbm;
+        
+        cout << "Enter the number of stocks you want to purchase and enter your membership code:\n";
+        cin >> stck >> mbm;
+        
+        if (mbm != membership_code)
+        {
+            throw runtime_error("Sir,Please enter a valid membership code.\n");
+        }
+        else if (stocks < 100) 
+        {
+            throw invalid_argument("Sir, The Stock Is Out.\n");
+        }
+        else if (stck > stocks) 
+        {
+            throw runtime_error("Sir, you are demanding more than the stock.\n");
+        }
+        else 
+        {
+            cout << "Stock purchased: " << stck << "\n";
+            stocks = stocks - stck;
+            cout << "Available Stocks: " << stocks << endl;
+        }
+    }
+    catch(const exception & e) 
+    {
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+==========================================================================================
+q.37. Credit Score Evaluator:
+Write a program that evaluates a person's credit score and categorizes it as "Excellent," "Good,"
+"Fair," or "Poor" using if-else statements.
+Credit score >1,00,000 Good
+Credit score>50,000 Fair
+Credit score>10,000 Poor.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int creditScore;
+    cout<<"enter your credit score accourding to your bank: ";
+    cin>>creditScore;
+    
+    if (creditScore > 100000) 
+    {
+        cout << "Excellent" << endl;
+    }
+    else if (creditScore > 50000) 
+    {
+        cout << "Good";
+    }
+    else if (creditScore > 10000) 
+    {
+        cout << "Fair";
+    }
+    else 
+    {
+        cout << "Poor";
+    }
+    return 0;
+}
+===========================================================================================
+q.38. Simple ATM System:
+Create a basic ATM system where the user can withdraw money. Use if-else statements to check the
+account balance and handle withdrawal limits.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    try 
+{
+        int withdraw, account = 100000;
+        cout << "Enter the amount you want to withdraw:\n";
+        cin >> withdraw;
+
+        if (withdraw > account) 
+{
+            throw runtime_error("Insufficient Balance.");
+        }
+ else if (account < 500) 
+{
+            throw runtime_error("Insufficient Balance (Account Balance is less than 500).");
+        }
+ else if ((withdraw % 500) != 0) 
+{
+            throw invalid_argument("This amount can be given because this amount is Not in multiple of 5.");
+        }
+ else
+ {
+            account = account - withdraw;
+            cout << "Withdraw amount: " << withdraw << "\n";
+            cout << "Account Balance left: " << account;
+        }
+    }
+    catch (const exception& e) 
+{
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+===========================================================================================
+q.39. Student Eligibility Checker:
+Implement a program that checks if a student is eligible for a scholarship based on their grades. Use
+if-else statements to determine eligibility criteria.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int 
+main () 
+ { 
+double percentage;
+  
+  do
+	
+	{
+	  
+cout << "Enter student's percentage 1 to 100 only: ";
+	  
+ 
+cin >> percentage;
+	  
+ 
+if (percentage < 1 || percentage > 100)
+		
+		{
+		  
+cout << "Invalid input! Percentage must be between 1 and 100.\n";
+		
+}
+	
+}
+  
+while (percentage < 1 || percentage > 100);
+  
+if (percentage >= 80.0)
+	
+	{
+	  
+cout << "Congratulations! You are eligible for the scholarship.\n";
+	
+}
+  
+  else
+	
+	{
+	  
+cout << "Sorry, you are not eligible for the scholarship.\n";
+	
+}
+  
+return 0;
+
+}
+===========================================================================================
+q.40. Day Type Identifier:
+Implement a program that takes a day of the week (Monday, Tuesday, etc.) as input and prints
+whether it's a weekday or a weekend day using if-else statements.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string dayoweek;
+    cout<<"enter the day of the week\n";
+    cin>>dayoweek;
+    // Convert the string to lowercase
+    for (char &c : dayoweek) 
+    {
+        c = tolower(c);
+    }
+    if(dayoweek=="monday" || dayoweek=="tuesday" || dayoweek=="wednusday" || dayoweek=="thusday" || dayoweek=="friday")
+    {
+        cout<<"weekday";
+    }
+    else if(dayoweek=="saturday" || dayoweek=="sunday")
+    {
+        cout<<"weekend";
+    }
+    else
+    {
+        cout<<"please enter the correct day of the week";
+    }
+return 0;
 }
