@@ -1,0 +1,122 @@
+
+
+qes 1:
+#include <iostream>
+using namespace std;
+int main() {
+    int a[10];
+    for(int i=0;i<10;i++){
+         if (i<7)
+             a[i]=i+1;
+         else
+         a[i]=i+2;
+    }
+    for(int i=0;i<10;i++){
+        cout<<a[i]<< " ";
+    }
+    return 0;  
+ }
+qes 2: missing number by user input
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    n--;
+    int k;
+    cin>>k;
+    int a[n];
+   
+    for(int i=0;i<n;i++){
+         if (i<k-1)
+             a[i]=i+1;
+         
+         else
+         a[i]=i+2;
+    }
+
+    for(int i=0;i<n;i++){
+        cout<<a[i]<< " ";
+    }
+    return 0;
+}
+
+qes 3)How do you find the duplicate number on a given integer array?
+#include <iostream>
+using namespace std;
+int findduplicatenumber(int a[],int n){
+    for(int i=0;i<n;i++){
+        if(a[i]!=i+1)
+    
+         return i;
+    }
+    return -1;
+    
+}
+
+int main() {
+    int n;
+    cin>>n;
+    n--;
+    int k;
+    cin>>k;
+    int a[n];
+    
+    for(int i=0;i<n;i++){
+         if (i<k-1)
+             a[i]=i+1;
+         
+         else
+         a[i]=i;
+    }
+
+    for(int i=0;i<n;i++){
+        cout<<a[i]<< " ";
+    }
+    cout<<findduplicatenumber(a,n);
+    return 0;
+}
+qes 4: How do you find the largest and smallest number in an unsintorted integer array?
+#include <iostream>
+using namespace std;
+pair<int, int> findMinMax(int arr[], int n)
+{
+	int mini = arr[0];
+	int maxi = arr[0];
+	for (int i = 0; i < n; i++) {
+		if (arr[i] < mini) {
+			mini = arr[i];
+		}
+		else if (arr[i] > maxi) {
+			maxi = arr[i];
+		}
+	}
+	return { mini, maxi };
+}
+int main()
+{
+	int arr[] = { 1, 2, 3, 4, 5 };
+	int N = sizeof(arr) / sizeof(arr[0]);
+	pair<int, int> ans = findMinMax(arr, N);
+	cout << "Maximum is: " << ans.second << endl;
+	cout << "Minimum is: " << ans.first;
+	return 0;
+}
+
+qes 5:How do you find all pairs of an integer array whose sum is equal to a given number?
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int arr[]={3,6,5,1,2,7};
+    int k=8;
+    for(int i=0;i<10;i++){
+         for(int j=0;j<10;j++){
+             if(arr[i]+arr[j]==k){
+                 cout<< "Pair found: (" << arr[i] << ", " << arr[j] << ")" ;
+             }
+         }
+    }
+  return 0;
+}
+
