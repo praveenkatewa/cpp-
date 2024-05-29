@@ -1,0 +1,280 @@
+ . Write a C++ program to find the second smallest elements in a given array of integers.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int size = 3;
+    int arr[size];
+    for (int j = 0; j < size; j++)
+    {
+        cout << "Enter the array index of " << j << " element :: ";
+        cin >> arr[j];
+    }
+
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int first = arr[0], second = arr[0];
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] < second)
+        {
+            second = first;
+            first = arr[i];
+        }
+        else if (arr[i] < second && arr[i] != first)
+        {
+            second = arr[i];
+        }
+    }
+    cout << "Second Smallest number : " << second << endl;
+
+
+}
+
+ Write a C++ program to find all elements in an array of integers that have at least two significant elements.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout << "Enter the size of array: ";
+    cin >> n;
+    int arr[n];
+    int sizeOfArray = sizeof(arr) / sizeof(arr[0]);
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter the element" << i + 1 << " : ";
+        cin >> arr[i];
+    }
+
+    cout << "[ ";
+    for (int i = 0; i < sizeOfArray; i++)
+    {
+        if (arr[i] != 0)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << "]";
+
+    return 0; //
+}
+
+Write a C++ program to find the most frequent element in an array of integers.
+// jo element sabse jayada bar array me ayaa ho
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 2, 2, 3, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int *fre = new int[n];
+    int visited = -1;
+
+    for (int i = 0; i < n; i++)
+    {
+        int count = 1;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                count++;
+                fre[j] = visited;
+            }
+            if (fre[i] != visited)
+            {
+                fre[i] = count;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if (fre[i] != visited)
+        {
+            cout << "Elemenet   |   Frequency" << endl;
+            cout << arr[i] << "       |       " << fre[i] << endl;
+        }
+    }
+    return 0; // 
+}
+
+ Write a C++ program to sort a given unsorted array of integers, in wave form.
+// Note: An array is in wave form when array[0] >= array[1] <= array[2] >= array[3] <= array[4] >= . . . .
+// input : [ 3, 6, 5, 10, 7, 20 ]
+// Output : [ 6, 3, 10, 5, 20, 7 ]
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+vector<int> sortingArray(vector<int> &arr)
+{ // First method
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = i + 1; j < arr.size(); j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    // Second method
+    {
+        sort(arr.begin(), arr.end());
+    }
+    return arr;
+}
+void swapFuntion(vector<int> &arr)
+{
+    sortingArray(arr);
+    cout << "Step I - Sorting Arrays : ";
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+    // vector<int> newArr(arr.size());
+    for (int i = 0; i < arr.size(); i += 2)
+    {
+        swap(arr[i], arr[i + 1]);
+    }
+    cout << "\n";
+    cout << "Step II - swap(arr[i] , arr[j]) : ";
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+}
+int main()
+{
+    vector<int> arr{10, 5, 6, 3, 2, 20, 100, 80};
+    swapFuntion(arr);
+
+    return 0; 
+}
+
+Write a C++ program to update every array element by multiplication of the next and previous values of a given array of integers.
+#include <iostream>
+#include <vector>
+using namespace std;
+vector<int> update_vector(vector<int> &arr)
+{
+
+    int ans, prev = arr[0], curr;
+    vector<int> ansvec;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if (i == 0)
+        {
+            arr[i] = prev * arr[i + 1];
+            ansvec.push_back(arr[i]);
+            // cout << "array of " << i << " : " << arr[0] << endl;
+        }
+        else if (i < arr.size() - 1)
+        {
+            curr = arr[i];
+            arr[i] = prev * arr[i + 1];
+            prev = curr;
+            ansvec.push_back(arr[i]);
+            // cout << "array of " << i << " : " << arr[i] << endl;
+        }
+        else if (i == arr.size() - 1)
+        {
+            arr[i] = prev * arr[i];
+            ansvec.push_back(arr[i]);
+            // cout << "array of " << i << " : " << arr[i] << endl;
+        }
+    }
+    return ansvec;
+}
+int main()
+{
+    vector<int> arr = {2, 4, 3, 2, 6};
+    vector<int> ans = update_vector(arr);
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+    return 0; 
+}
+
+
+Write a C++ program to separate even and odd numbers in an array of integers. Put all even numbers first, and then odd numbers.
+#include <bits/stdc++.h>
+using namespace std;
+void findEvenOddInArray(vector<int> &arr)
+{
+    int temp = arr[0];
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            if (arr[j] % 2 == 1)
+            {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+}
+int main()
+{
+    vector<int> arr{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    findEvenOddInArray(arr);
+    return 0; 
+}
+
+Write a C++ program to move all negative elements of an array of integers to the end of the array. This is done without changing the order of the positive and negative elements of the array.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {-1, -3, -5, -6, 1, -43, 34, 23, 0, 23};
+    vector<int> result;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if (arr[i] >= 0)
+        {
+            result.push_back(arr[i]);
+        }
+    }
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if (arr[i] < 0)
+        {
+            result.push_back(arr[i]);
+        }
+    }
+    for (auto it : result)
+    {
+        cout << it << " ";
+    }
+    return 0; // Return 0 indicate successful execution
+}
+
+
+
+////////////////////////////////////////
+class Solution {
+public:
+    int reverse(int x) {
+        int sum=0;
+        int temp;
+        while(x){
+            temp=x%10;
+            x=x/10;
+            if(sum> INT_MAX/10 || sum< INT_MIN/10) return 0;
+            sum=sum*10 +temp;
+
+        }
+        return sum;
+        
+    }
+};
