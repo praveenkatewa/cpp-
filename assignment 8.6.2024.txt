@@ -1,0 +1,144 @@
+Find the Maximum Element in an Array
+Write a function that takes an array of integers and its size as inputs and returns the maximum element in the array.
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int fmE(int arr[], int size) {
+  
+    int maxElement = arr[0];
+
+
+    for(int i = 1; i < size; ++i) {
+      
+        if(arr[i] > maxElement) {
+            maxElement = arr[i];
+        }
+    }
+
+    
+    return maxElement;
+}
+
+int main() {
+   
+    int arr[] = {1,5,8,7,9,4,5,7,3};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    int maxElement = fmE(arr, size);
+    cout << "The maximum element in the array is: " << maxElement << endl;
+
+    return 0;
+}
+
+ Reverse an Array
+Write a function that takes an array of integers and its size as inputs and reverses the array using two pointer approach.
+#include <iostream>
+using namespace std;
+
+// Function to reverse an array using two-pointer approach
+void reverseArray(int arr[], int size) {
+    // Initialize two pointers: one at the beginning and one at the end of the array
+    int start = 0;
+    int end = size - 1;
+
+    // Loop until the two pointers meet in the middle
+    while (start < end) {
+        // Swap the elements at the start and end pointers
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
+        // Move the pointers towards the middle
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    // Example usage
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Original array: ";
+    for (int i = 0; i < size; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Reverse the array
+    reverseArray(arr, size);
+
+    cout << "Reversed array: ";
+    for (int i = 0; i < size; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+Define a Simple Class
+Define a class Rectangle with private attributes for length and width, and public methods to set and get the values of these attributes. Also, include a method to calculate the area of the rectangle.
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+class Rectangle {
+private:
+   
+    double length;
+    double width;
+
+public:
+    
+    Rectangle() {
+        length = 0;
+        width = 0;
+    }
+
+
+    void setLength(double len) {
+      
+            length = len;
+        
+    }
+
+    
+    double getLength() {
+        return length;
+    }
+
+    void setWidth(double wid) {
+        
+            width = wid;
+        
+    }
+
+    double getWidth() {
+        return width;
+    }
+
+    double calculateArea() {
+        return length * width;
+    }
+};
+
+int main() {
+
+    Rectangle rect;
+
+  
+    rect.setLength(5.0);
+    rect.setWidth(3.0);
+
+    cout << "Length: " << rect.getLength() << endl;
+    cout << "Width: " << rect.getWidth() << endl;
+
+    cout << "Area: " << rect.calculateArea() << endl;
+
+    return 0;
+}
+
+
